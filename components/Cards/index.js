@@ -20,7 +20,7 @@
 
 const cards = document.querySelector('.cards-container')
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles');
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(res => {
     console.log(res.data);
     const card = createCard(res.data);
