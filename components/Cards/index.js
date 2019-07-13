@@ -35,46 +35,14 @@ axios
     console.log(articles);
 
     articles.forEach(createArticle(res.data.articles));
-    
-    javascripts.forEach(javascript => {
-      axios.get(`https://lambda-times-backend.herokuapp.com/articles/${javascript.headline}`);
-    });
   });
-
-// axios.get('https://lambda-times-backend.herokuapp.com/articles')
-//   .then(res => {
-//     res.data.articles.forEach(article => {
-//       axios.get(`https://lambda-times-backend.herokuapp.com/${article.headline}`);
-//     });
-//   });
-
-// axios
-//   .get('https://lambda-times-backend.herokuapp.com/articles')
-//   .then(res => res.data.articles)
-//   .then(articles => {
-//     articles.forEach(article => {
-//       axios.get(`https://lambda-times-backend.herokuapp.com/articles/${articles.healine}`);
-//       })
-//   })
-
-  // axios.get('https://api.github.com/users/blevs/followers')
-  // .then(res => res.data.slice(0, 3))
-  // .then(followers => {
-  //   followers.forEach(follower => {
-  //     axios.get(`https://api.github.com/users/${follower.login}`)
-  //       .then(res => {
-  //         const card = createCard(res.data);
-  //         cards.append(card);
-  //       });
-  //   });
-  // });
 
 function createArticle(article) {
   const card = document.createElement('div');
   card.classList.add('card');
 
   const headline = document.createElement('div');
-  // headline.textContent = res.data.articles.headline;
+  headline.textContent = article.headline;
   headline.classList.add('headline');
 
   const author = document.createElement('div');
@@ -84,7 +52,7 @@ function createArticle(article) {
   imgContainer.classList.add('img-container');
 
   const image = document.createElement('img');
-  image.src = article.image_url;
+  image.src = article.assets_url;
 
   const name = document.createElement('span');
   name.textContent = `By: ${article.authorName}`;
@@ -98,5 +66,3 @@ function createArticle(article) {
 
   return createArticle;
 }
-
-// cardsContainer.appendChild(createArticle());
