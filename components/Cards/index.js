@@ -52,7 +52,7 @@ function createArticle(article) {
   imgContainer.classList.add('img-container');
 
   const image = document.createElement('img');
-  image.src = article.assets_url;
+  image.src = article.authorPhoto;
 
   const name = document.createElement('span');
   name.textContent = `By: ${article.authorName}`;
