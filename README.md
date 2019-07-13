@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model. It is most readily accessed through dev tools in the browser. It can be updated dynamically using JavaScript.
+
 2. What is an event?
+
+An event is something the user instigates (click, drag, scroll, etc.) that can result in some kind of response if there is an event listener.
 
 3. What is an event listener?
 
+An event listener is a function that "listens" for an event and results in a response.
+
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList into an array to me able to use array methods.
+
 5. What is a component?
+
+A component is a reusable bit of code.
 
 ### Git Set up
 
@@ -51,7 +61,7 @@ Your finished project must include all of the following requirements:
 
 * [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled it. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [ ] Following the instructions in the `Header/index.js` file, create the Header component.
 
 * [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
