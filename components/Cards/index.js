@@ -26,27 +26,55 @@ axios
     console.log(res.data);
     console.log(res.data.articles);
     console.log(res.data.articles.bootstrap);
-    const javascripts = res.data.articles.bootstrap;
+    const javascripts = res.data.articles.javascript;
     const bootstraps = res.data.articles.bootstrap;
-    const technologies = res.data.articles.bootstrap;
-    const jqueries = res.data.articles.bootstrap;
-    const nodes = res.data.articles.bootstrap;
+    const technologies = res.data.articles.technology;
+    const jqueries = res.data.articles.jquery;
+    const nodes = res.data.articles.node;
     const articles = javascripts.concat(bootstraps, technologies, jqueries, nodes);
     console.log(articles);
 
-    articles.forEach(article => {
-      const card = createArticle(res.data);
-      const articles = javascripts.concat(bootstraps, technologies, jqueries, nodes);
-      article.textContent = articles.headline;
-      cardsContainer.append(card);
+    articles.forEach(createArticle(res.data.articles));
+    
+    javascripts.forEach(javascript => {
+      axios.get(`https://lambda-times-backend.herokuapp.com/articles/${javascript.headline}`);
     });
   });
+
+// axios.get('https://lambda-times-backend.herokuapp.com/articles')
+//   .then(res => {
+//     res.data.articles.forEach(article => {
+//       axios.get(`https://lambda-times-backend.herokuapp.com/${article.headline}`);
+//     });
+//   });
+
+// axios
+//   .get('https://lambda-times-backend.herokuapp.com/articles')
+//   .then(res => res.data.articles)
+//   .then(articles => {
+//     articles.forEach(article => {
+//       axios.get(`https://lambda-times-backend.herokuapp.com/articles/${articles.healine}`);
+//       })
+//   })
+
+  // axios.get('https://api.github.com/users/blevs/followers')
+  // .then(res => res.data.slice(0, 3))
+  // .then(followers => {
+  //   followers.forEach(follower => {
+  //     axios.get(`https://api.github.com/users/${follower.login}`)
+  //       .then(res => {
+  //         const card = createCard(res.data);
+  //         cards.append(card);
+  //       });
+  //   });
+  // });
 
 function createArticle(article) {
   const card = document.createElement('div');
   card.classList.add('card');
 
   const headline = document.createElement('div');
+  // headline.textContent = res.data.articles.headline;
   headline.classList.add('headline');
 
   const author = document.createElement('div');

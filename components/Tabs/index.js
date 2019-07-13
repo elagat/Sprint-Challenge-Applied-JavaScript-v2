@@ -14,8 +14,8 @@ const topics = document.querySelector('.topics');
 axios
   .get('https://lambda-times-backend.herokuapp.com/topics')
   .then(res => {
-    // console.log(res.data);
-    // console.log(res.data.topics);
+    console.log(res.data);
+    console.log(res.data.topics);
     res.data.topics.forEach(function(topic, i) {
       const tab = document.createElement('div');
       tab.textContent = res.data.topics[i];
