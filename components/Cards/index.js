@@ -18,43 +18,43 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
-const cardsContainer = document.querySelector('.cards-container')
+// const cardsContainer = document.querySelector('.cards-container')
+//
+// axios.get('https://lambda-times-backend.herokuapp.com/articles')
+//   .then(res => {
+//     console.log(res.data);
+//     const card = createArticle(res.data);
+//     cardsContainer.append(card);
+//   });
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then(res => {
-    console.log(res.data);
-    const card = createArticle(res.data);
-    cardsContainer.append(card);
-  });
+// function createArticle(article) {
+//   const card = document.createElement('div');
+//   card.classList.add('card');
+//
+//   const headline = document.createElement('div');
+//   headline.classList.add('headline');
+//   headline.textContent = article.headline;
+//
+//   const author = document.createElement('div');
+//   author.classList.add('author');
+//
+//   const imgContainer = document.createElement('div');
+//   imgContainer.classList.add('img-container');
+//
+//   const image = document.createElement('img');
+//   image.src = article.image_url;
+//
+//   const name = document.createElement('span');
+//   name.textContent = `By: ${article.authorName}`;
+//
+//   cardsContainer.append(card);
+//   card.append(headline);
+//   card.append(author);
+//   author.append(imgContainer);
+//   imgContainer.append(image);
+//   author.append(name);
+//
+//   return createArticle;
+// }
 
-function createArticle(article) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-
-  const headline = document.createElement('div');
-  headline.classList.add('headline');
-  // headline.textContent = article.headline;
-
-  const author = document.createElement('div');
-  author.classList.add('author');
-
-  const imgContainer = document.createElement('div');
-  imgContainer.classList.add('img-container');
-
-  const image = document.createElement('img');
-  image.src = article.image_url;
-
-  const name = document.createElement('span');
-  name.textContent = `By: ${article.name}`;
-
-  cardsContainer.append(card);
-  card.append(headline);
-  card.append(author);
-  author.append(imgContainer);
-  imgContainer.append(image);
-  author.append(name);
-
-  return createArticle;
-}
-
-cardsContainer.appendChild(createArticle());
+// cardsContainer.appendChild(createArticle());

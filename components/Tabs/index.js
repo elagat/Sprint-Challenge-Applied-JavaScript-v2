@@ -11,27 +11,27 @@
 const tabs = document.querySelector('.tabs');
 const topics = document.querySelector('.topics');
 
-axios.get('https://lambda-times-backend.herokuapp.com/topics')
+axios
+  .get('https://lambda-times-backend.herokuapp.com/topics')
   .then(res => {
-    console.log(res.data);
+    res.data.topics.forEach(function(topic, i) {
+      const tab = document.createElement('div');
+      tab.textContent = res.data.topics[i];
+      tab.classList.add('tab');
+      topics.append(tab);
+    });
   })
 
-const topicsArray = [
-  'javascript',
-  'bootstrap',
-  'technology',
-  'jquery',
-  'node.js',
-];
 
-topicsArray.forEach(createTab());
+
 
 function createTab() {
   const tab = document.createElement('div');
   tab.classList.add('tab');
+  tab.textContent =
 
   tabs.append(tab);
   return createTab;
 }
 
-tabs.appendChild(createTab());
+// tabs.appendChild(createTab());
